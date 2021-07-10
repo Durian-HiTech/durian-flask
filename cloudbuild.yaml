@@ -1,0 +1,5 @@
+steps:
+- name: gcr.io/cloud-builders/gcloud
+  args: ['compute', 'instances', 'add-metadata', 'example-instance','--metadata startup-script-url=gs://bucket/file']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['compute', 'instances', 'reset', 'example-instance']
