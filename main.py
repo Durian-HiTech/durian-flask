@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 import requests
 import json
 from datetime import datetime
-from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
@@ -83,6 +82,7 @@ def get_flight_info(d, a, date):
 
 
 def get_flight_info_by_code(code, date=datetime.now().strftime('%Y-%m-%d')):
+    from bs4 import BeautifulSoup
     url = f'http://www.umetrip.com/mskyweb/fs/fc.do?flightNo={code}&date={date}&channel='
     fail_num = 0
     while True:
